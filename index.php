@@ -10,7 +10,7 @@
 
   }
 
-  $sql = "SELECT * FROM users WHERE name = ? AND email = ?";
+  $sql = "SELECT * FROM users WHERE name = ? AND password = ?";
 
   $stmt = $conn->prepare($sql);
   $stmt ->bind_param("ss", $name, $email);
@@ -53,7 +53,7 @@
     <div class="content">      
  
       <div id="login">
-        <form method="post" action="home.php"> 
+        <form method="post" action=""> 
           <h1>Login</h1> 
           <p> 
             <label for="name">Usuário: </label>
@@ -74,7 +74,7 @@
       </div>
  
       <div id="cadastro">
-        <form method="post" action="cadastro.php"> 
+        <form method="post" action=""> 
           <h1>Cadastro</h1>           
           <p> 
             <label for="name">Seu nome: </label>

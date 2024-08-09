@@ -4,7 +4,7 @@
     $servername = "localhost";
     $username = "T3logistic";
     $password = "123456";
-    $dbname = "login";
+    $dbname = "t3frotas";
 
 
     $conn = new mysqli($servername, $username, $password, $dbname);
