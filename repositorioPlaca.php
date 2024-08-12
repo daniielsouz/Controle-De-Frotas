@@ -2,7 +2,7 @@
 require_once 'excluir/conexao.php';
 require_once 'viagem.php';
 
-class Funcionalidade
+class RepositorioPlaca
 {
 
   public function __construct(private PDO $pdo) {}
@@ -11,6 +11,7 @@ class Funcionalidade
 
   public function adicionarPlaca(string $placa)
   {
+    $placa = strtoupper($placa); //Formatação para maisculas
 
     $sql = "INSERT INTO placas (placa) VALUES (?)";
     $statement = $this->pdo->prepare($sql);
@@ -33,9 +34,7 @@ class Funcionalidade
       return $this->placasCadastradas($i);
     }, $listaPlacas);
     return $dados;
-    var_dump($dados);
   }
-
 
   public function adicionarViagem(string $dataPartida, string $motorista, string $placa, string $destinoPartida, string $destinoChegada)
   {
