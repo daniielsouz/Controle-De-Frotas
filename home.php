@@ -1,21 +1,23 @@
 <?php
 
 require 'excluir/conexao.php';
-require 'funcionalidades.php';
+require 'repositorioPlaca.php';
 
-
+$salvarPlaca = new RepositorioPlaca($pdo);
 if (isset($_POST['register'])) {
-    $salvarPlaca = new Funcionalidade($pdo);
     $salvarPlaca->adicionarPlaca($_POST['numberPlate']);
+    header('Location: home.php');
 }
 
-$placasCadastradas = new Funcionalidade($pdo);
+$placasCadastradas = new RepositorioPlaca($pdo);
 $listaPlacas = $placasCadastradas->mostrarPlacas();
 
 
+
 if (isset($_POST['addTrip'])) {
-    $adicionarViagem = new Funcionalidade($pdo);
+    $adicionarViagem = new RepositorioPlaca($pdo);
     $adicionarViagem->adicionarViagem($_POST['departureDate'], $_POST['driver'], $_POST['plateOptions'], $_POST['departure'], $_POST['arrival']);
+    header('Location: home.php');
 }
 
 
