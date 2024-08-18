@@ -1,4 +1,16 @@
-#cadastro, 
+body {
+  margin: 0;
+
+}
+img {
+  display: flex;
+  background-size: cover;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+}
+/* #cadastro, 
 #login{
   position: absolute;
   top: 0px;
@@ -76,4 +88,4 @@
     opacity: 0;
     transform: translateX(-20px);
   }
-}
+} */
